@@ -62,12 +62,22 @@ When you see a `:` this will mean it is executing a commmand
 
 ## Exercises
 
+Navigation
+
 ```bash
 curl https://raw.githubusercontent.com/ThePrimeagen/vim-fundamentals/master/course-website/lessons/exercise-0-hjkl-x.md > exercise.md && vim exercise.md
 ```
 
+Yanking, Deleting, and Register
+
 ```bash
 curl https://raw.githubusercontent.com/ThePrimeagen/vim-fundamentals/master/course-website/lessons/exercise-1-dyp.md > exercise.md && vim exercise.md
+```
+
+Insert
+
+```bash
+curl https://raw.githubusercontent.com/ThePrimeagen/vim-fundamentals/master/course-website/lessons/exercise-2-insert.md > exercise.md && vim exercise.md
 ```
 
 ## Helpful Commands
@@ -82,6 +92,12 @@ Remove highlights
 
 ```bash
 :nohls
+```
+
+View registers
+
+```bash
+:reg
 ```
 
 ## Notes
