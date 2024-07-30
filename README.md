@@ -80,26 +80,122 @@ Insert
 curl https://raw.githubusercontent.com/ThePrimeagen/vim-fundamentals/master/course-website/lessons/exercise-2-insert.md > exercise.md && vim exercise.md
 ```
 
+Setting up Views and Integrating Motions
+
+```bash
+curl https://raw.githubusercontent.com/ThePrimeagen/vim-fundamentals/master/course-website/lessons/some-javascript.md > exercise.js && vim exercise.js
+```
+
 ## Helpful Commands
 
-Center screen
+### General
+
+#### List available options for a command
+
+```bash
+<C-d>
+```
+
+Example: Pressing `<C-d>` after `:colorscheme` will give you a list of all availble color schemes to select from
+
+#### Center screen
 
 ```bash
 zz
 ```
 
-Remove highlights
+#### Remove highlights
 
 ```bash
 :nohls
 ```
 
-View registers
+#### View registers
 
 ```bash
 :reg
 ```
 
+#### Source current file in vim
+
+```bash
+:so %
+```
+
+`:so` is the source commmand
+
+`%` is current file
+
+So you could do this with other files too
+
+### Explore
+
+#### Open Explore view
+
+```bash
+:Ex
+```
+
+#### Open Explore view to the side
+
+```bash
+:Vex
+```
+
+#### Horizontal (Split) explore view
+
+```bash
+:Sex
+```
+
+### Window Mode
+
+#### Enter Window Mode
+
+```bash
+<C-w>
+```
+
+Then you can use hjkl for navigation
+
+And s and v for horizontal and vertical split
+
+### Edit
+
+```bash
+:e <path-to-file-to-edit>
+```
+
+Slow, so you will want a fuzzy finder
+
+### Marks
+
+Bookmarking a file
+
+Navigate to a position in a file. Then press `m` in normal mode followed by a letter for your mark.
+
+Global marks are denoted by a capital letter and are accessable accross buffers.
+Local marks are denoted by a lowercase letter and are contained to a buffer
+
+Create new global mark:
+
+```bash
+m<capital-letter>
+```
+
+Create new local mark:
+
+```bash
+m<capital-letter>
+```
+
+Jump to mark:
+```bash
+'<capital-letter>
+```
+
 ## Notes
 
 Not recommended for Java
+
+Remaps will cause there to be a pause on the first key as you execute a remap. So make sure they start with something you don't use often or conflict with another command.
