@@ -194,7 +194,7 @@ Jump to mark:
 '<capital-letter>
 ```
 
-### Alternate File and Jumplist
+### Alternate File 
 
 You can see your current file and previous file in your registers
 
@@ -214,6 +214,26 @@ You can jump to the previous file with either of the following:
 ```bash
 <C-6>
 <C-^>
+```
+
+### Jumplist
+
+View your jumps
+
+```bash
+:jumps
+```
+
+Go to previous jump
+
+```bash
+<C-o>
+```
+
+Go to next jump
+
+```bash
+<C-i>
 ```
 
 ## Notes
