@@ -194,6 +194,28 @@ Jump to mark:
 '<capital-letter>
 ```
 
+### Alternate File and Jumplist
+
+You can see your current file and previous file in your registers
+
+```bash
+:reg
+```
+
+Will output something like this at the bottom:
+
+```bash
+  c  "%   src/also-this.c # current file
+  c  "#   src/twitch.c    # previous file
+```
+
+You can jump to the previous file with either of the following:
+
+```bash
+<C-6>
+<C-^>
+```
+
 ## Notes
 
 Not recommended for Java
