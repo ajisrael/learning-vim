@@ -236,6 +236,80 @@ Go to next jump
 <C-i>
 ```
 
+### Search & Replace
+
+#### Basic Search
+
+```bash
+/<search-string>
+```
+
+`n` walks forwards through matches
+`N` walks backwards through matches
+
+For highlighting run `:set hls` and to ignore case `:set ic` or just set both in one command
+
+```bash
+:set hls ic
+```
+
+#### Regex Search
+
+Essentially the same as a basic search just with a regex
+
+```bash
+/<search-regex>
+```
+
+#### Replace
+
+You can use the same syntax as for search as for a find and replace in terms of the selected range.
+
+```bash
+%     # entire file
+1,4   # lines 1 through 4
+'<,'> # selected range (auto populates if : is pressed in visual mode)
+      # no range will just apply to current line
+```
+
+Format is:
+
+```bash
+:<range>s/<search-token>/<replacement-token>
+```
+
+You can also add a `g` to the end to replace all instances as it will only replace the first instance on a line by default
+You can also add a `c` to the end to ask for confirmation for each instance of the replace you're about to do
+
+Getting fancy with search tokens:
+
+Lets say you have the following if statements and you wanted to swap the first condition with the second condition it is anded with.
+
+```bash
+if (foo && bar) {
+} else if (bar && baz) {
+} else if (baz && foo) {
+} 
+```
+
+You can select that range and execute the following command:
+
+```bash
+:'<,'>s/(\(.*\) && \(.*\))/(\2 \&\& \1)
+```
+
+The `\(.*\)` (AKA, fighting one-eyed kirby) is telling the regex expression to save that selected region to a variable.
+That variable corresponds to a number starting at 1 for each instance of the one-eyed kirby.
+
+We also need to escape the `&` because they execute a command
+
+```bash
+if (bar && foo) {
+} else if (baz && bar) {
+} else if (foo && baz) {
+} 
+```
+
 ## Notes
 
 Not recommended for Java
