@@ -86,6 +86,24 @@ Setting up Views and Integrating Motions
 curl https://raw.githubusercontent.com/ThePrimeagen/vim-fundamentals/master/course-website/lessons/some-javascript.md > exercise.js && vim exercise.js
 ```
 
+Search and Replace
+
+```bash
+curl https://raw.githubusercontent.com/ThePrimeagen/vim-fundamentals/master/course-website/lessons/exercise-3-search-and-replace.md > exercise.md && vim exercise.md
+```
+
+Macros
+
+```bash
+curl https://raw.githubusercontent.com/ThePrimeagen/vim-fundamentals/master/course-website/lessons/exercise-4-macros.md > exercise.md && vim exercise.md 
+```
+
+Registers
+
+```bash
+curl https://raw.githubusercontent.com/ThePrimeagen/vim-fundamentals/master/course-website/lessons/exercise-5-registers.md > exercise.md && vim exercise.md
+```
+
 ## Helpful Commands
 
 ### General
@@ -127,6 +145,12 @@ zz
 `%` is current file
 
 So you could do this with other files too
+
+#### Go to first non whitespace character of line
+
+```bash
+_
+```
 
 ### Explore
 
@@ -309,6 +333,40 @@ if (bar && foo) {
 } else if (foo && baz) {
 } 
 ```
+
+### Macros
+
+Allows you to record and replay keystrokes. (Also creates Macro Pressure anytime you try and record anything)
+Begin recording by pressing `q` in normal mode. Then press the character you want to bind to. (Typically people use `a`). This will start a recording session for the macro you are about to create.
+Now enter in your keystrokes and finish your recording with q. It will only stop recording if q is pressed in normal mode.
+To play your macro press `@` and the character you bound the macro to. You can combine this with numbers just like any motion.
+For example if you bound your macro to `a` then `100@a` would play that macro 100 times.
+
+Your macros will be stored in a register corresponding to the character you bound.
+
+### Registers
+
+As simple as a key value store. Keys are characters and values are strings.
+
+You view registers with the `:reg` command.
+
+You can yank into a register as well. All registers start with the `"` character.
+
+```bash
+V"by
+```
+
+This will yank the contents of the current line into register `b` (`"b`)
+
+Likewise you can also paste the contents of a register:
+
+```bash
+"bp
+```
+
+This will paste the contents of register `b`
+
+This means you can edit macros. You can also play the contents of a register as a macro with `@` then the register value. Example with register `b` would be `@b`
 
 ## Notes
 
