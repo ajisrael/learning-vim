@@ -104,6 +104,12 @@ Registers
 curl https://raw.githubusercontent.com/ThePrimeagen/vim-fundamentals/master/course-website/lessons/exercise-5-registers.md > exercise.md && vim exercise.md
 ```
 
+Advanced Motions
+
+```bash
+curl https://raw.githubusercontent.com/ThePrimeagen/vim-fundamentals/master/course-website/lessons/exercise-6-motions.md > exercise.md && vim exercise.md
+```
+
 ## Helpful Commands
 
 ### General
@@ -373,3 +379,37 @@ This means you can edit macros. You can also play the contents of a register as 
 Not recommended for Java
 
 Remaps will cause there to be a pause on the first key as you execute a remap. So make sure they start with something you don't use often or conflict with another command.
+
+## Remaps (TODO)
+
+Some additional remaps to consider:
+
+Delete current selection, and yank it to nowhere. So we don't overwrite our previous yank when pasting.
+
+```bash
+vnoremap <leader>p "_dP
+```
+
+Yank to clipboard. `"+` is the register mapped to your system clipboard
+
+```bash
+vnoremap <leader>y "+y
+nnoremap <leader>y "+y
+```
+
+Copy entire file to clipboard
+
+```bash
+nnoremap <leader>Y gg"+yG
+```
+
+Move code up and down, maintaining indents with `J` and `K`
+
+```bash
+vnoremap J :m '>+1<CR>gv=gv
+vnoremap K :m '<-2<CR>gv=gv
+```
+
+## Plugins 
+
+Fugitive vim: Git integrations
